@@ -2,7 +2,7 @@
 
 sudo mkdir /etc/telegraf/
 
-sudo cp /vagrant/telegraf.conf /etc/telegraf/telegraf.conf
+sudo cp /vagrant/config/telegraf.conf /etc/telegraf/telegraf.conf
 
 curl -o telegraf.rpm https://dl.influxdata.com/telegraf/releases/telegraf-1.13.1-1.x86_64.rpm
 sudo yum localinstall -y telegraf.rpm
