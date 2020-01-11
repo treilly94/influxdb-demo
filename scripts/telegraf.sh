@@ -9,4 +9,4 @@ sudo yum localinstall -y telegraf.rpm
 
 sudo usermod -a -G docker telegraf
 
-sudo systemctl start telegraf
+sudo systemctl restart telegraf

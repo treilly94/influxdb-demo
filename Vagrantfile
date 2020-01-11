@@ -25,6 +25,10 @@ Vagrant.configure("2") do |config|
 
     end
 
+    influxdb.vm.provision "shell", path: "scripts/docker.sh"
+
+    influxdb.vm.provision "shell", path: "scripts/syslog.sh"
+
     influxdb.vm.provision "shell", path: "scripts/telegraf.sh"
 
   end
@@ -43,6 +47,10 @@ Vagrant.configure("2") do |config|
       d.run "nginx"
 
     end
+
+    rand.vm.provision "shell", path: "scripts/docker.sh"
+
+    rand.vm.provision "shell", path: "scripts/syslog.sh"
 
     rand.vm.provision "shell", path: "scripts/telegraf.sh"
   
