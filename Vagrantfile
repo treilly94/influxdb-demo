@@ -39,7 +39,11 @@ Vagrant.configure("2") do |config|
       vb.name = "rand"
     end
 
-    rand.vm.provision "shell", path: "telegraf.sh"
+    rand.vm.provision "docker" do |d|
+      d.run "nginx"
+
+    end
+
     rand.vm.provision "shell", path: "scripts/telegraf.sh"
   
   end
