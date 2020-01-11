@@ -15,17 +15,17 @@ Vagrant.configure("2") do |config|
 
     influxdb.vm.provision "docker" do |d|
       d.run "influxdb",
-        args: "-p 8086:8086 -v /vagrant/influxdb.conf:/etc/influxdb/influxdb.conf:ro"
+        args: "-p 8086:8086 -v /vagrant/config/influxdb.conf:/etc/influxdb/influxdb.conf:ro"
 
       d.run "chronograf",
         args: "-p 8888:8888"
 
       d.run "kapacitor",
-        args: "-p 9092:9092 -v /vagrant/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro"
+        args: "-p 9092:9092 -v /vagrant/config/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro"
 
     end
 
-    influxdb.vm.provision "shell", path: "telegraf.sh"
+    influxdb.vm.provision "shell", path: "scripts/telegraf.sh"
 
   end
 
@@ -40,6 +40,7 @@ Vagrant.configure("2") do |config|
     end
 
     rand.vm.provision "shell", path: "telegraf.sh"
+    rand.vm.provision "shell", path: "scripts/telegraf.sh"
   
   end
   
