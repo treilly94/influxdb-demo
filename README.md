@@ -2,7 +2,7 @@
 
 This is a demo of a tick stack.
 
-## Quick start
+## Quick Start
 
 Run `vagrant up` to start the vms (Note the provisioning should work automatically however in some cases it isnt run properly and the tick stack will be using default config. If that does happen try running `vagrant provision`)
 
@@ -10,7 +10,7 @@ When its all up go to http://10.10.10.10:8888
 
 Go through the initial setup (The urls should use the ip address `10.10.10.10` not the default value of `localhost`).
 
-## Project structure 
+## Project Structure
 
 ### Vagrant
 
@@ -28,7 +28,7 @@ The `scripts` directory contains the shell scripts used by the vagrant provision
 | syslog.sh     | Installs and configures syslog   |
 | docker.sh     | Configures docker daemon         |
 
-### Config
+### Config
 
 The `config` directory contains the config files for the various services. These are then either moved into the appropiate directory by one of the scripts or mounted into a docker container.
 
